@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout"
+	th:with="viewport='width=device-width, initial-scale=1, user-scalable=0'">
+<head>
+</head>
+<body>
+	<div class="container" layout:fragment="content">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="login-panel panel panel-default">
+					<div th:replace="login :: .login-panel/.panel-heading"></div>
+					<div class="panel-body">
+						<div th:replace="login :: .login-panel/.panel-body/.text-danger"></div>
+						<form role="form" th:action="@{/login/phone}" method="post">
+							<fieldset>
+								<div class="form-group">
+									<input class="form-control" th:placeholder="#{phone.number}" name="number" id="number" type="tel" autofocus="autofocus" tabindex="10" />
+								</div>
+								<div class="form-group">
+									<div class="input-group">
+										<input class="form-control" th:placeholder="#{phone.code}" name="code" id="code" type="number" tabindex="30" />
+										<span class="input-group-btn">
+											<button class="btn btn-default" id="sendCodeButton" tabindex="20" th:text="#{phone.code.send}" onclick="alert('test code is 123456');return false;"></button>
+										</span>
+									</div><!-- /input-group -->
+								</div>
+								<div class="checkbox">
+									<label>
+										<input name="remember-me" type="checkbox" tabindex="40" /><span th:text="#{login.rememberMe}">Remember me on this computer.</span>
+									</label>
+								</div>
+								<button type="submit" class="btn btn-lg btn-success btn-block" id="loginButton" th:text="#{login.login}" tabindex="50">Login</button>
+							</fieldset>
+						</form>
+					</div>
+					<div class="panel-footer">
+						<ol class="breadcrumb" style="margin-bottom: 0;">
+							<li><a th:href="@{/login}" th:text="#{login.type.password}" tabindex="100"></a></li>
+							<li class="active" th:text="#{login.type.phone}"></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

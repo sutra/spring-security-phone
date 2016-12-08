@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Appenders>
+		<Console name="console" target="SYSTEM_OUT">
+			<ThresholdFilter level="DEBUG" onMatch="ACCEPT" onMismatch="DENY" />
+			<PatternLayout charset="UTF-8" pattern="%d{HH:mm:ss.SSS} %-5p [%t] %l %m%n" />
+		</Console>
+		<RollingRandomAccessFile name="file"
+			fileName="target/spring-security-phone-samples-helloworld.log"
+			filePattern="target/spring-security-phone-samples-helloworld-%d{yyyy-MM-dd}-%i.log.gz">
+			<PatternLayout charset="UTF-8">
+				<Pattern>%d %-6p [%t] %C{1.}.%M:%L %m%n</Pattern>
+			</PatternLayout>
+			<Policies>
+				<OnStartupTriggeringPolicy />
+				<TimeBasedTriggeringPolicy />
+			</Policies>
+			<DefaultRolloverStrategy max="7" />
+		</RollingRandomAccessFile>
+	</Appenders>
+	<Loggers>
+		<Logger name="org.springframework.web.filter.CommonsRequestLoggingFilter"
+			level="DEBUG" includeLocation="true"
+			additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="file" />
+		</Logger>
+		<Logger name="org.oxerr.spring.security.phone.samples.helloworld"
+			level="ALL" includeLocation="true"
+			additivity="false">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="file" />
+		</Logger>
+		<Root level="WARN" includeLocation="true">
+			<AppenderRef ref="console" />
+			<AppenderRef ref="file" />
+		</Root>
+	</Loggers>
+</Configuration>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" th:content="${viewport} ?: 'width=device-width, initial-scale=1'" />
+<!--/* The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags */-->
+
+<meta name="_csrf" th:content="${_csrf.token}" />
+<meta name="_csrf_header" th:content="${_csrf.headerName}" />
+<meta name="_ctx" th:content="${#httpServletRequest.getContextPath()}" />
+
+<!--/* HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries */-->
+<!--/* WARNING: Respond.js doesn't work if you view the page via file:// */-->
+<!--[if lt IE 9]>
+<script src="//cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+</head>
+<body>
+	<section layout:fragment="content"></section>
+
+	<script th:inline="javascript">
+	/*<![CDATA[*/
+	<!--
+	var _ctx = /*[[${#httpServletRequest.getContextPath()}]]*/;
+	var _locale = /*[[${#locale.language + (#strings.isEmpty(#locale.country) ? '' : '-' + #locale.country)}]]*/;
+	//-->
+	/*]]>*/
+	</script>
+
+	<section layout:fragment="custom-scripts" th:remove="tag"></section>
+</body>
+</html>

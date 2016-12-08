@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorator="layout"
+	th:with="viewport='width=device-width, initial-scale=1, user-scalable=0'">
+<head>
+</head>
+<body onload="document.f.username.focus();">
+	<div class="container" layout:fragment="content">
+		<div class="row">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="login-panel panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title" th:text="#{login.title}">Please Sign In</h3>
+					</div>
+					<div class="panel-body">
+						<div class="text-danger" th:if="${#httpSession?.getAttribute('SPRING_SECURITY_LAST_EXCEPTION')} != null">
+							<p th:text="#{login.failure}">Your login attempt was not successful, try again.</p>
+							<p><span th:text="#{login.failure.reason}">Reason: </span><span th:text="${#httpSession?.getAttribute('SPRING_SECURITY_LAST_EXCEPTION').localizedMessage}"></span></p>
+						</div>
+						<form name="f" role="form" th:action="@{/login}" method="post">
+							<fieldset>
+								<div class="form-group">
+									<input class="form-control" th:placeholder="#{login.username}" name="username" type="text" autofocus="autofocus" />
+								</div>
+								<div class="form-group">
+									<input class="form-control" th:placeholder="#{login.password}" name="password" type="password" />
+								</div>
+								<div class="checkbox">
+									<label>
+										<input name="remember-me" type="checkbox" /><span th:text="#{login.rememberMe}">Remember me on this computer.</span>
+									</label>
+								</div>
+								<button type="submit" class="btn btn-lg btn-success btn-block" th:text="#{login.login}">Login</button>
+							</fieldset>
+						</form>
+					</div>
+					<div class="panel-footer">
+						<ol class="breadcrumb" style="margin-bottom: 0;">
+							<li class="active" th:text="#{login.type.password}"></li>
+							<li><a th:href="@{/login/phone}" th:text="#{login.type.phone}"></a></li>
+						</ol>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
