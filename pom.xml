@@ -7,7 +7,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.oxerr.spring.security</groupId>
 	<artifactId>spring-security-phone</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>pom</packaging>
 	<name>Spring Security Phone</name>
 	<description>Login via phone number &amp; verification code.</description>
