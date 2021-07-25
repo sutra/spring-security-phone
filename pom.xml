@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.oxerr</groupId>
 		<artifactId>oxerr-parent</artifactId>
-		<version>0.0.1-SNAPSHOT</version>
+		<version>1.0.0</version>
 	</parent>
 	<groupId>org.oxerr.spring.security</groupId>
 	<artifactId>spring-security-phone</artifactId>
