@@ -1,5 +1,6 @@
-package org.oxerr.spring.security.phone.core;
+package org.oxerr.spring.security.phone.authentication;
 
+import org.oxerr.spring.security.phone.core.userdetails.PhoneUserDetailsService;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.MessageSource;
 import org.springframework.context.MessageSourceAware;

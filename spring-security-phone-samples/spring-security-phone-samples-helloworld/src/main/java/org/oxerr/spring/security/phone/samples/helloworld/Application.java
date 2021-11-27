@@ -2,8 +2,8 @@ package org.oxerr.spring.security.phone.samples.helloworld;
 
 import java.util.Arrays;
 
-import org.oxerr.spring.security.phone.core.PhoneNumberNotFoundException;
-import org.oxerr.spring.security.phone.core.PhoneUserDetailsService;
+import org.oxerr.spring.security.phone.core.userdetails.PhoneNumberNotFoundException;
+import org.oxerr.spring.security.phone.core.userdetails.PhoneUserDetailsService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;

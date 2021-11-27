@@ -1,4 +1,4 @@
-package org.oxerr.spring.security.phone.core;
+package org.oxerr.spring.security.phone.authentication;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;

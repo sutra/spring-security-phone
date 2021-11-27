@@ -1,4 +1,4 @@
-package org.oxerr.spring.security.phone.core;
+package org.oxerr.spring.security.phone.core.userdetails;
 
 import org.springframework.security.core.AuthenticationException;
 
