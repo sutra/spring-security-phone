@@ -38,7 +38,7 @@ public class PhoneAuthenticationProvider implements AuthenticationProvider,
 		final PhoneAuthenticationToken phoneAuthenticationToken = (PhoneAuthenticationToken) authentication;
 
 		final String number = (String) phoneAuthenticationToken.getPrincipal();
-		final String code = phoneAuthenticationToken.getCredentials();
+		final String code = (String) phoneAuthenticationToken.getCredentials();
 
 		if (!phoneUserDetailsService.consumeCode(number, code)) {
 			throw new BadCredentialsException(messages.getMessage(
