@@ -2,8 +2,8 @@ package org.oxerr.spring.security.phone.samples.helloworld;
 
 import java.util.Arrays;
 
-import org.oxerr.spring.security.phone.core.PhoneNumberNotFoundException;
-import org.oxerr.spring.security.phone.core.PhoneUserDetailsService;
+import org.oxerr.spring.security.phone.core.userdetails.PhoneNumberNotFoundException;
+import org.oxerr.spring.security.phone.core.userdetails.PhoneUserDetailsService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
@@ -25,8 +25,8 @@ public class Application {
 	 * @return the filter registration bean for the {@link CommonsRequestLoggingFilter}.
 	 */
 	@Bean
-	public FilterRegistrationBean commonsRequestLoggingFilterRegistrationBean() {
-		FilterRegistrationBean registrationBean = new FilterRegistrationBean();
+	public FilterRegistrationBean<?> commonsRequestLoggingFilterRegistrationBean() {
+		FilterRegistrationBean<CommonsRequestLoggingFilter> registrationBean = new FilterRegistrationBean<>();
 		CommonsRequestLoggingFilter requestLoggingFilter = new CommonsRequestLoggingFilter();
 		registrationBean.setFilter(requestLoggingFilter);
 		registrationBean.setOrder(Ordered.HIGHEST_PRECEDENCE);

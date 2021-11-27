@@ -1,8 +1,8 @@
 package org.oxerr.spring.security.phone.config.annotation.web.configurers;
 
-import org.oxerr.spring.security.phone.core.PhoneAuthenticationProvider;
-import org.oxerr.spring.security.phone.core.PhoneUserDetailsService;
-import org.oxerr.spring.security.phone.web.PhoneAuthenticationFilter;
+import org.oxerr.spring.security.phone.authentication.PhoneAuthenticationProvider;
+import org.oxerr.spring.security.phone.core.userdetails.PhoneUserDetailsService;
+import org.oxerr.spring.security.phone.web.authentication.PhoneAuthenticationFilter;
 import org.springframework.security.config.annotation.web.HttpSecurityBuilder;
 import org.springframework.security.config.annotation.web.configurers.AbstractAuthenticationFilterConfigurer;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;

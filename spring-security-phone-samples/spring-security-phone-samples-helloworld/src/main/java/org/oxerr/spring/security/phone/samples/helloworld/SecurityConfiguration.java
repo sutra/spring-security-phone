@@ -1,7 +1,7 @@
 package org.oxerr.spring.security.phone.samples.helloworld;
 
 import org.oxerr.spring.security.phone.config.annotation.web.configurers.PhoneLoginConfigurer;
-import org.oxerr.spring.security.phone.core.PhoneUserDetailsService;
+import org.oxerr.spring.security.phone.core.userdetails.PhoneUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;

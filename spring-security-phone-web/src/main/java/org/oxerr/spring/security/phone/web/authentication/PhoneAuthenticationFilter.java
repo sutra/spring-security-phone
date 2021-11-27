@@ -1,9 +1,9 @@
-package org.oxerr.spring.security.phone.web;
+package org.oxerr.spring.security.phone.web.authentication;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.oxerr.spring.security.phone.core.PhoneAuthenticationToken;
+import org.oxerr.spring.security.phone.authentication.PhoneAuthenticationToken;
 import org.springframework.security.authentication.AuthenticationServiceException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
