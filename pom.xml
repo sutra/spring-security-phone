@@ -9,7 +9,7 @@
 	<parent>
 		<groupId>org.oxerr</groupId>
 		<artifactId>oxerr-parent</artifactId>
-		<version>1.0.0</version>
+		<version>1.4.0</version>
 	</parent>
 	<groupId>org.oxerr.spring.security.phone</groupId>
 	<artifactId>spring-security-phone</artifactId>
@@ -22,6 +22,7 @@
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
+		<spring-security.version>5.6.0</spring-security.version>
 	</properties>
 	<modules>
 		<module>spring-security-phone-core</module>
@@ -86,17 +87,17 @@
 			<dependency>
 				<groupId>org.springframework.security</groupId>
 				<artifactId>spring-security-core</artifactId>
-				<version>5.5.1</version>
+				<version>${spring-security.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.security</groupId>
 				<artifactId>spring-security-config</artifactId>
-				<version>5.5.1</version>
+				<version>${spring-security.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.springframework.security</groupId>
 				<artifactId>spring-security-web</artifactId>
-				<version>5.5.1</version>
+				<version>${spring-security.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
