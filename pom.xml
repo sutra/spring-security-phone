@@ -11,7 +11,7 @@
 		<artifactId>oxerr-parent</artifactId>
 		<version>1.0.0</version>
 	</parent>
-	<groupId>org.oxerr.spring.security</groupId>
+	<groupId>org.oxerr.spring.security.phone</groupId>
 	<artifactId>spring-security-phone</artifactId>
 	<version>1.1.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
